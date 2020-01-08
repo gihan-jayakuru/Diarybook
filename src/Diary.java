@@ -271,7 +271,7 @@ public class Diary extends javax.swing.JFrame {
                             .addComponent(jButton1)
                             .addComponent(jTextFielddate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))))
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
@@ -538,6 +538,18 @@ public class Diary extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
+        
+        
+        int rIndex = jTable1.getSelectedRow();//get the select row index
+        
+        jTextFieldtitle.setText(jTable1.getValueAt(rIndex,0).toString());
+        jTextFieldnote.setText(jTable1.getValueAt(rIndex,1).toString());
+        jTextFielddate.setText(jTable1.getValueAt(rIndex,2).toString());
+        
+        Image pic= ((ImageIcon)jTable1.getValueAt(rIndex, 3)).getImage().getScaledInstance(jLabel6.getWidth(), jLabel6.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon img = new ImageIcon(pic);
+        jLabel6.setIcon(img);
+        
     }//GEN-LAST:event_jTable1MouseClicked
    //filter table function
 //    private void filter(String query){
